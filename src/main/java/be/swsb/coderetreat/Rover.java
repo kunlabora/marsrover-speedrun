@@ -27,7 +27,11 @@ public class Rover {
     }
 
     public void forward() {
-        this.position = position.incrementY();
+        if (this.getDirection().equals(Direction.NORTH)) {
+            this.position = position.incrementY();
+        } else {
+            this.position = position.incrementX();
+        }
     }
 
     public void backward() {

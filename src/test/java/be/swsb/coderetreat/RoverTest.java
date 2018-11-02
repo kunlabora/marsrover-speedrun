@@ -36,6 +36,14 @@ class RoverTest {
     }
 
     @Test
+    void forwards_RoverFacingEast_MovesUpTheXAxis() {
+        final Rover rover = rover(Direction.EAST);
+        rover.forward();
+
+        assertThat(rover.getPosition()).isEqualTo(position(1, 0));
+    }
+
+    @Test
     void backwards_InitialRover_MovesDownTheYAxis() {
         final Rover rover = rover();
         rover.backward();
@@ -50,13 +58,5 @@ class RoverTest {
         rover.backward();
 
         assertThat(rover.getPosition()).isEqualTo(position(0, -2));
-    }
-
-    @Test
-    void forwards_RoverFacingEast_MovesUpTheXAxis() {
-        final Rover rover = rover(Direction.EAST);
-        rover.forward();
-
-        assertThat(rover.getPosition()).isEqualTo(position(1, 0));
     }
 }
