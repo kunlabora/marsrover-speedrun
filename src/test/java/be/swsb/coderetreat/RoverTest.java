@@ -44,6 +44,22 @@ class RoverTest {
     }
 
     @Test
+    void forwards_RoverFacingSouth_MovesDownTheYAxis() {
+        final Rover rover = rover(Direction.SOUTH);
+        rover.forward();
+
+        assertThat(rover.getPosition()).isEqualTo(position(0, -1));
+    }
+
+    @Test
+    void forwards_RoverFacingWest_MovesDownTheXAxis() {
+        final Rover rover = rover(Direction.WEST);
+        rover.forward();
+
+        assertThat(rover.getPosition()).isEqualTo(position(-1, 0));
+    }
+
+    @Test
     void backwards_InitialRover_MovesDownTheYAxis() {
         final Rover rover = rover();
         rover.backward();
