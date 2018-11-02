@@ -12,4 +12,9 @@ class RoverTest {
     void constructor_MarsRoverIsInitializedAtPosition00() throws Exception {
         assertThat(rover().getPosition()).isEqualTo(position(0,0));
     }
+
+    @Test
+    void constructor_MarsRoverIsInitializedFacingNorth() throws Exception {
+        assertThat(rover().getDirection()).isEqualTo(Direction.NORTH);
+    }
 }

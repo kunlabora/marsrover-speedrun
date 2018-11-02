@@ -12,4 +12,8 @@ public class Rover {
     public Position getPosition() {
         return Position.position(0,0);
     }
+
+    public Direction getDirection() {
+        return null;
+    }
 }
