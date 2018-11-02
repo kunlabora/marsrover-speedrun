@@ -29,7 +29,7 @@ public class Rover {
     }
 
     public void forward() {
-        if (this.getDirection().equals(Direction.NORTH)) {
+        if (Direction.NORTH.equals(this.getDirection())) {
             this.position = position.incrementY();
         } else {
             this.position = position.incrementX();
