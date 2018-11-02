@@ -44,4 +44,8 @@ public class Position {
                 ", y=" + y +
                 '}';
     }
+
+    public Position addY() {
+        return null;
+    }
 }
