@@ -41,6 +41,14 @@ public class Rover {
     }
 
     public void backward() {
-        this.position = position.decrementY();
+        if (Direction.NORTH.equals(this.getDirection())) {
+            this.position = position.decrementY();
+        } else if (Direction.EAST.equals(this.getDirection())) {
+            this.position = position.decrementX();
+        } else if (Direction.SOUTH.equals(this.getDirection())) {
+            this.position = position.incrementY();
+        } else if (Direction.WEST.equals(this.getDirection())) {
+            this.position = position.incrementX();
+        }
     }
 }
