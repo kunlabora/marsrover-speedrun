@@ -42,4 +42,13 @@ class RoverTest {
 
         assertThat(rover.getPosition()).isEqualTo(position(0, -1));
     }
+
+    @Test
+    void backwards_InitialRover_BackwardsTwice_MovesDownTheYAxisTwice() {
+        final Rover rover = rover();
+        rover.backward();
+        rover.backward();
+
+        assertThat(rover.getPosition()).isEqualTo(position(0, -2));
+    }
 }
