@@ -8,9 +8,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 class PositionTest {
 
     @Test
-    void addY_ReturnsNewPositionWithYIncremented() {
+    void incrementY_ReturnsNewPositionWithYIncremented() {
         final Position position = position(0, 1);
 
-        assertThat(position.addY()).isEqualTo(position(0, 2));
+        assertThat(position.incrementY()).isEqualTo(position(0, 2));
     }
 }

@@ -23,6 +23,6 @@ public class Rover {
     }
 
     public void forward() {
-        this.position = position.addY();
+        this.position = position.incrementY();
     }
 }

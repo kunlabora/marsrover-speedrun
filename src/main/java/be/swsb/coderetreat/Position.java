@@ -45,7 +45,7 @@ public class Position {
                 '}';
     }
 
-    public Position addY() {
+    public Position incrementY() {
         return position(this.x, this.y+1);
     }
 }
