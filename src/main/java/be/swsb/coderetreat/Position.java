@@ -46,18 +46,18 @@ public class Position {
     }
 
     public Position incrementY() {
-        return position(this.x, this.y+1);
+        return position(this.x, this.y + 1);
     }
 
     public Position decrementY() {
-        return position(this.x, this.y-1);
+        return position(this.x, this.y - 1);
     }
 
     public Position incrementX() {
-        return position(this.x+1, this.y);
+        return position(this.x + 1, this.y);
     }
 
     public Position decrementX() {
-        return null;
+        return position(this.x - 1, this.y);
     }
 }
