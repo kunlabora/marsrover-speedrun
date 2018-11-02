@@ -5,8 +5,10 @@ import static be.swsb.coderetreat.Position.position;
 public class Rover {
 
     private Position position;
+    private Direction direction;
 
     private Rover(final Direction direction) {
+        this.direction = direction;
         this.position = position(0, 0);
     }
 
@@ -23,7 +25,7 @@ public class Rover {
     }
 
     public Direction getDirection() {
-        return Direction.NORTH;
+        return direction;
     }
 
     public void forward() {

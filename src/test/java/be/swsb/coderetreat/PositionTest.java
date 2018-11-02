@@ -13,11 +13,17 @@ class PositionTest {
 
         assertThat(position.incrementY()).isEqualTo(position(0, 2));
     }
-
     @Test
     void decrementY_ReturnsNewPositionWithYDecremented() {
         final Position position = position(0, 1);
 
         assertThat(position.decrementY()).isEqualTo(position(0, 0));
+    }
+
+    @Test
+    void incrementX_ReturnsNewPositionWithXIncremented() {
+        final Position position = position(0, 1);
+
+        assertThat(position.incrementX()).isEqualTo(position(1, 1));
     }
 }

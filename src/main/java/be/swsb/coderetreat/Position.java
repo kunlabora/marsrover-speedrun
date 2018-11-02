@@ -54,6 +54,6 @@ public class Position {
     }
 
     public Position incrementX() {
-        return null;
+        return position(this.x+1, this.y);
     }
 }
