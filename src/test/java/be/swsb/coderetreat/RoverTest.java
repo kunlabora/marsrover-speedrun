@@ -122,4 +122,23 @@ class RoverTest {
         assertThat(rover.getDirection()).isEqualTo(NORTH);
         assertThat(rover.getPosition()).isEqualTo(position(0,0));
     }
+
+    @Test
+    void right_RoverRotatesClockwise() {
+        final Rover rover = rover();
+        assertThat(rover.getDirection()).isEqualTo(NORTH);
+        assertThat(rover.getPosition()).isEqualTo(position(0,0));
+        rover.right();
+        assertThat(rover.getDirection()).isEqualTo(EAST);
+        assertThat(rover.getPosition()).isEqualTo(position(0,0));
+        rover.right();
+        assertThat(rover.getDirection()).isEqualTo(SOUTH);
+        assertThat(rover.getPosition()).isEqualTo(position(0,0));
+        rover.right();
+        assertThat(rover.getDirection()).isEqualTo(WEST);
+        assertThat(rover.getPosition()).isEqualTo(position(0,0));
+        rover.right();
+        assertThat(rover.getDirection()).isEqualTo(NORTH);
+        assertThat(rover.getPosition()).isEqualTo(position(0,0));
+    }
 }
