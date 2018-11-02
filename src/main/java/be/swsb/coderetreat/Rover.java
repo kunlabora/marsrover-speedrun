@@ -14,6 +14,6 @@ public class Rover {
     }
 
     public Direction getDirection() {
-        return null;
+        return Direction.NORTH;
     }
 }
