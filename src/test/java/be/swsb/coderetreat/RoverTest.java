@@ -75,4 +75,28 @@ class RoverTest {
 
         assertThat(rover.getPosition()).isEqualTo(position(0, -2));
     }
+
+    @Test
+    void backwards_RoverFacingEast_MovesDownTheXAxis() {
+        final Rover rover = rover(Direction.EAST);
+        rover.backward();
+
+        assertThat(rover.getPosition()).isEqualTo(position(-1, 0));
+    }
+
+    @Test
+    void backwards_RoverFacingSouth_MovesUpTheYAxis() {
+        final Rover rover = rover(Direction.SOUTH);
+        rover.backward();
+
+        assertThat(rover.getPosition()).isEqualTo(position(0, 1));
+    }
+
+    @Test
+    void backwards_RoverFacingWest_MovesUpTheXAxis() {
+        final Rover rover = rover(Direction.WEST);
+        rover.backward();
+
+        assertThat(rover.getPosition()).isEqualTo(position(1, 0));
+    }
 }
