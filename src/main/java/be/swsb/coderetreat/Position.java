@@ -46,6 +46,6 @@ public class Position {
     }
 
     public Position addY() {
-        return null;
+        return position(this.x, this.y+1);
     }
 }
