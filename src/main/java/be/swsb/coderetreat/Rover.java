@@ -1,8 +1,13 @@
 package be.swsb.coderetreat;
 
+import static be.swsb.coderetreat.Position.position;
+
 public class Rover {
 
+    private Position position;
+
     private Rover() {
+        this.position = position(0, 0);
     }
 
     public static Rover rover() {
@@ -10,7 +15,7 @@ public class Rover {
     }
 
     public Position getPosition() {
-        return Position.position(0,0);
+        return position;
     }
 
     public Direction getDirection() {
@@ -18,6 +23,6 @@ public class Rover {
     }
 
     public void forward() {
-
+        this.position = position(0, 1);
     }
 }
