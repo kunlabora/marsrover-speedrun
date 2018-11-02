@@ -2,6 +2,10 @@ package be.swsb.coderetreat;
 
 import org.junit.jupiter.api.Test;
 
+import java.net.NoRouteToHostException;
+
+import static be.swsb.coderetreat.Direction.*;
+import static be.swsb.coderetreat.Direction.NORTH;
 import static be.swsb.coderetreat.Position.position;
 import static be.swsb.coderetreat.Rover.rover;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -15,7 +19,7 @@ class RoverTest {
 
     @Test
     void constructor_MarsRoverIsInitializedFacingNorth() throws Exception {
-        assertThat(rover().getDirection()).isEqualTo(Direction.NORTH);
+        assertThat(rover().getDirection()).isEqualTo(NORTH);
     }
 
     @Test
@@ -37,7 +41,7 @@ class RoverTest {
 
     @Test
     void forwards_RoverFacingEast_MovesUpTheXAxis() {
-        final Rover rover = rover(Direction.EAST);
+        final Rover rover = rover(EAST);
         rover.forward();
 
         assertThat(rover.getPosition()).isEqualTo(position(1, 0));
@@ -45,7 +49,7 @@ class RoverTest {
 
     @Test
     void forwards_RoverFacingSouth_MovesDownTheYAxis() {
-        final Rover rover = rover(Direction.SOUTH);
+        final Rover rover = rover(SOUTH);
         rover.forward();
 
         assertThat(rover.getPosition()).isEqualTo(position(0, -1));
@@ -53,7 +57,7 @@ class RoverTest {
 
     @Test
     void forwards_RoverFacingWest_MovesDownTheXAxis() {
-        final Rover rover = rover(Direction.WEST);
+        final Rover rover = rover(WEST);
         rover.forward();
 
         assertThat(rover.getPosition()).isEqualTo(position(-1, 0));
@@ -78,7 +82,7 @@ class RoverTest {
 
     @Test
     void backwards_RoverFacingEast_MovesDownTheXAxis() {
-        final Rover rover = rover(Direction.EAST);
+        final Rover rover = rover(EAST);
         rover.backward();
 
         assertThat(rover.getPosition()).isEqualTo(position(-1, 0));
@@ -86,7 +90,7 @@ class RoverTest {
 
     @Test
     void backwards_RoverFacingSouth_MovesUpTheYAxis() {
-        final Rover rover = rover(Direction.SOUTH);
+        final Rover rover = rover(SOUTH);
         rover.backward();
 
         assertThat(rover.getPosition()).isEqualTo(position(0, 1));
@@ -94,9 +98,28 @@ class RoverTest {
 
     @Test
     void backwards_RoverFacingWest_MovesUpTheXAxis() {
-        final Rover rover = rover(Direction.WEST);
+        final Rover rover = rover(WEST);
         rover.backward();
 
         assertThat(rover.getPosition()).isEqualTo(position(1, 0));
+    }
+
+    @Test
+    void left_RoverRotatesCounterClockwise() {
+        final Rover rover = rover();
+        assertThat(rover.getDirection()).isEqualTo(NORTH);
+        assertThat(rover.getPosition()).isEqualTo(position(0,0));
+        rover.left();
+        assertThat(rover.getDirection()).isEqualTo(WEST);
+        assertThat(rover.getPosition()).isEqualTo(position(0,0));
+        rover.left();
+        assertThat(rover.getDirection()).isEqualTo(SOUTH);
+        assertThat(rover.getPosition()).isEqualTo(position(0,0));
+        rover.left();
+        assertThat(rover.getDirection()).isEqualTo(EAST);
+        assertThat(rover.getPosition()).isEqualTo(position(0,0));
+        rover.left();
+        assertThat(rover.getDirection()).isEqualTo(NORTH);
+        assertThat(rover.getPosition()).isEqualTo(position(0,0));
     }
 }

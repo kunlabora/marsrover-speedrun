@@ -51,4 +51,8 @@ public class Rover {
             this.position = position.incrementX();
         }
     }
+
+    public void left() {
+
+    }
 }
