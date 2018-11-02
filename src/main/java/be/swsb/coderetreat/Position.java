@@ -56,4 +56,8 @@ public class Position {
     public Position incrementX() {
         return position(this.x+1, this.y);
     }
+
+    public Position decrementX() {
+        return null;
+    }
 }

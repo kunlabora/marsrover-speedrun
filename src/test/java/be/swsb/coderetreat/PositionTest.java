@@ -26,4 +26,11 @@ class PositionTest {
 
         assertThat(position.incrementX()).isEqualTo(position(1, 1));
     }
+
+    @Test
+    void decrementX_ReturnsNewPositionWithXDecremented() {
+        final Position position = position(0, 1);
+
+        assertThat(position.incrementX()).isEqualTo(position(-1, 1));
+    }
 }

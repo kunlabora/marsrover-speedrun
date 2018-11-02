@@ -31,8 +31,12 @@ public class Rover {
     public void forward() {
         if (Direction.NORTH.equals(this.getDirection())) {
             this.position = position.incrementY();
-        } else {
+        } else if (Direction.EAST.equals(this.getDirection())) {
             this.position = position.incrementX();
+        } else if (Direction.SOUTH.equals(this.getDirection())) {
+            this.position = position.decrementY();
+        } else if (Direction.WEST.equals(this.getDirection())) {
+            this.position = position.decrementX();
         }
     }
 
