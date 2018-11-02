@@ -27,6 +27,6 @@ public class Rover {
     }
 
     public void backward() {
-
+        this.position = position.decrementY();
     }
 }
