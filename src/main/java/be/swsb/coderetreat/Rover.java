@@ -57,6 +57,6 @@ public class Rover {
     }
 
     public void right() {
-
+        this.direction = this.direction.clockwise();
     }
 }

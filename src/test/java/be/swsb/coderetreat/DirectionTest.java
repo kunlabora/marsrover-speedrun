@@ -14,4 +14,12 @@ class DirectionTest {
         assertThat(SOUTH.counterClockwise()).isEqualTo(EAST);
         assertThat(EAST.counterClockwise()).isEqualTo(NORTH);
     }
+
+    @Test
+    void clockwise() {
+        assertThat(NORTH.clockwise()).isEqualTo(EAST);
+        assertThat(EAST.clockwise()).isEqualTo(SOUTH);
+        assertThat(SOUTH.clockwise()).isEqualTo(WEST);
+        assertThat(WEST.clockwise()).isEqualTo(NORTH);
+    }
 }
