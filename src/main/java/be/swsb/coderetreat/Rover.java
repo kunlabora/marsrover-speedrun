@@ -6,12 +6,16 @@ public class Rover {
 
     private Position position;
 
-    private Rover() {
+    private Rover(final Direction direction) {
         this.position = position(0, 0);
     }
 
     public static Rover rover() {
-        return new Rover();
+        return new Rover(Direction.NORTH);
+    }
+
+    public static Rover rover(final Direction direction) {
+        return new Rover(direction);
     }
 
     public Position getPosition() {

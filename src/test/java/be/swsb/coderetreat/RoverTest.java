@@ -51,4 +51,12 @@ class RoverTest {
 
         assertThat(rover.getPosition()).isEqualTo(position(0, -2));
     }
+
+    @Test
+    void forwards_RoverFacingEast_MovesUpTheXAxis() {
+        final Rover rover = rover(Direction.EAST);
+        rover.forward();
+
+        assertThat(rover.getPosition()).isEqualTo(position(1, 0));
+    }
 }
