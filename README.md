@@ -25,8 +25,6 @@ Penalty seconds added for using a mouse = the duration of mouse usage * 2.
 `Mouseless` allowed mouse usage:
 * ctrl+selecting gradle builds (if you even need that) 
 
-Penalty seconds added for using a shortcut = 2 seconds per shortcut used.
-
 ### `Mouseful`
 You are not allowed to use shortcuts, only your mouse. You **can** use IntelliJ's refactor tools, but you'll have to access them via a (rightclicked) menu.
 
@@ -37,6 +35,8 @@ So no `refactor, rename`, `run tests`, or `multicursor using shortcuts`.
 * ctrl+v (Paste)
 * ctrl+space (Basic code completion)
 * alt+enter (Show intention actions and quick-fixes)
+
+Penalty seconds added for using a shortcut = 2 seconds per shortcut used.
 
 _**Note**_  
 Kickstarted with Java 8, AssertJ, JUnit and Mockito.
